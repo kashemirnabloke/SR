@@ -1,0 +1,48 @@
+Задание номер 3
+
+import math
+
+a = float(input())
+b = float(input())
+s = float(input())
+
+while True:
+    w = 1 / ((2 - a ** 2) * math.sqrt(2 - (a ** 2)))
+    print(w)
+    a += s
+    if a > b:
+        break
+
+
+Задание номер 4
+
+import math
+summa = 0
+n = int(input())
+while n <= 10:
+    s = math.sin(5 * n)
+    summa += s
+    n += 1
+
+print(1 / 2 * (summa))
+
+Задание номер 5
+
+sim = 0
+count = 2
+po = 0
+p = 0
+n = int(input())
+for i in range(1, n + 1):
+
+    for j in range(1, n + 1):
+        if j == n - po:
+            p = 1 * count
+            sim += p
+        else:
+            p = 0
+        print(p, end=' ')
+    count += 2
+    po += 1
+    print('')
+print(sim)
