@@ -1,0 +1,71 @@
+#1
+import math
+def f(a, b, h):
+    y = []
+    while True:
+        w = 1 / ((2 - a ** 2) * math.sqrt(2 - (a ** 2)))
+        y.append(w)
+        a += h                                            
+        if a > b:
+            break
+    print(y)                                                    
+
+a = float(input('Введите начало множества: '))
+b = float(input('Введите конец множества: '))
+h = float(input('Введите шаг: '))
+
+f(a, b, h) 
+
+
+#2
+
+def fun_str(string):                                                                    
+    my_list = []                                                                       
+    my_list.append('Количество слов ' + str(len(string.split())))                      
+    my_list.append('Длина строки ' + str(len(string)))                               
+    count_b = 0                                               
+    count_n = 0
+    count_s = 0
+    for i in string:                                         
+        i = str(i)                                            
+        if i == '!' or i == '?' or i == '#' or i == '/' or i == '*' or i == '&':          
+            count_s += 1                                                                   
+        elif i.isalpha() == True:                                                        
+            count_b += 1
+        elif i.isdigit() == True:                                                     
+            count_n += 1
+
+    my_list.append('Количество букв в строке ' + str(count_b))       
+    my_list.append('Количество цифр в строке ' + str(count_n))
+    my_list.append('Количество спецсимволов в строке ' + str(count_s))
+    print(my_list)                
+
+string = input("Введите строку ")  
+fun_str(string)    
+
+
+
+#3
+
+my_list = ['Оранжевый', 'Зеленый', 'Желтый'] 
+my_file = open("gggFile.txt", "w+")           
+                                                
+for i in range(len(my_list)):       
+    my_file.write(my_list[i] + "\n")    
+my_file.close()                        
+
+
+def find_str(number):              
+    count = 0                    
+    with open("gggFile.txt", "r") as file:
+        for line in file:               
+            count += 1                     
+            if number == count:                
+                print(line)                     
+
+
+number = int(input()) 
+
+if number > len(my_list):  
+    number = number = int(input('Введите число не превышающее ' + str(len(my_list)) + ' - ')) 
+find_str(number) 
